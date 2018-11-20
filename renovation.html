@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <head>
+        <title>værkstederne</title>
+
+        <style>
+            body { font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif}
+            header { border-style: solid; border-width: medium; text-align: center; 
+            color: darkgreen;}
+            h2 { text-align: center; }
+            footer{ background-color: palegreen; padding: 15px 32px;}
+        
+            .section {border-style: solid; border-width: medium;}
+            .button  { background-color: Green; color: white; 
+                padding: 15px 32px; text-align: center; text-decoration: none;
+                font-size: 16px; display: inline-block; margin: 4px 2px;}
+        </style>
+        <script>
+            var currentLink = "#";
+            
+            // gut shit
+            var NGGYU = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+
+            // links to all workshops
+            var renovationLink = "https://www.youtube.com/embed/d0eUUg33B44";
+            var bankLink = "https://www.youtube.com/embed/r6PxVcyvDgw";
+            var yogaLink = "https://www.youtube.com/embed/leRvDSbnsnI";
+            var kunstTrykLink = "https://www.youtube.com/embed/mRvQmaB9hAw";
+
+            function setVLink(link)
+            {
+                currentLink = link;
+                document.getElementById("video").src = currentLink;
+            }
+
+            // takes two strings not ints
+            function togImgSize(sizeX1, sizeY1, sizeY2, sizeX2 )
+            {
+                celematrw = document.getElementById("rpimg").style.width;
+                celematrh = document.getElementById("rpimg").style.height;
+
+                if (celematrw == String(sizeX1)){
+                    celematrw = String(sizeX2);
+                    alert(celematrw);
+                }
+                else{
+                    celematrw = String(sizeX1);
+                    alert(celematrw);
+                }
+            }
+        </script>
+    </head>
+    <body>
+
+        <header>
+            <h1>Værkstederne på OEH</h1>
+        </header>
+
+        <div id="roomplan" class="section">
+            <h2>lokaleplanen</h2>
+
+            <img id="rpimg" src="Lokaleplanoeh\side01.jpg" alt="image" 
+            style="width:400px;height:350px;border:0;"></img>
+
+            <button class="button" onclick="togImgSize(10, 10, 20, 20)"></button>
+        </div>
+
+        <div id="buttonlinks" class="section">
+            <h2>kan ikke finde det ønskede værksted på kortet?</h2>
+            <h3>vælg det værksted du vil finde vej til</h3>
+            <button class="button" onclick="#">Rådhuset</button>
+            <button class="button" onclick="setVLink(renovationLink)">Renovation</button>
+            <button class="button" onclick="setVLink(bankLink)">banken</button>
+            <button class="button" onclick="setVLink(yogaLink)">yoga</button>
+            <button class="button" onclick="setVLink(kunstTrykLink)">kunst og tryk</button>
+            <button class="button" onclick="#">...</button>
+            
+            <div>
+                <iframe id="video" width="560" height="315" src="renovationLink"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; 
+                gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <footer>
+            <h4>sidens skabere: </h4>
+            <p>Anders A. Ahrensbach og Jonas C. Tulberg - Renovation</p>
+        </footer>
+        <script>
+            if (document.getElementsByClassName("button").onclick = "#")
+            {
+                document.getElementsByClassName("button").onclick = "setVLink(NGGYU)";
+            }
+        </script>
+    </body>
+</html>
