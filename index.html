@@ -12,6 +12,8 @@
             footer{ background-color: palegreen; padding: 15px 32px;}
         
             .section {border-style: solid; border-width: medium;}
+            .add     {border-style: dotted; border-width: medium;
+                background-color:lightgreen }
             .button  { background-color: Green; color: white; 
                 padding: 15px 32px; text-align: center; text-decoration: none;
                 font-size: 16px; display: inline-block; margin: 4px 2px;}
@@ -23,10 +25,16 @@
             var NGGYU = "https://www.youtube.com/embed/dQw4w9WgXcQ";
 
             // links to all workshops
-            var renovationLink = "https://www.youtube.com/embed/d0eUUg33B44";
-            var bankLink = "https://www.youtube.com/embed/r6PxVcyvDgw";
-            var yogaLink = "https://www.youtube.com/embed/leRvDSbnsnI";
-            var kunstTrykLink = "https://www.youtube.com/embed/mRvQmaB9hAw";
+            var renovationLink  = "https://www.youtube.com/embed/d0eUUg33B44";
+            var bankLink        = "https://www.youtube.com/embed/r6PxVcyvDgw";
+            var yogaLink        = "https://www.youtube.com/embed/leRvDSbnsnI";
+            var kunstTrykLink   = "https://www.youtube.com/embed/mRvQmaB9hAw";
+            var naturGalLink    = "https://www.youtube.com/embed/Iws-mbN5zOY";
+            var rådhusetLink    = "https://www.youtube.com/embed/GRU-PvW81j8";
+            var avisLink        = "https://www.youtube.com/embed/F7RQHs7XVw4";
+            var legeTVLink      = "https://www.youtube.com/embed/1FeZRfk3q9M";
+            var julPVB          = "https://www.youtube.com/embed/3XpGC8eTFv0";
+            var eventKlubLink   = "https://www.youtube.com/embed/N2agHCwKxkU";
 
             function setVLink(link)
             {
@@ -57,40 +65,50 @@
             <h1>Værkstederne på OEH</h1>
         </header>
 
-        <div id="roomplan" class="section">
+        <div style="width:50%;" class="add">
+            <p>natur og mad add</p>
+        </div>
+        <article id="roomplan" class="section">
             <h2>lokaleplanen</h2>
 
             <img id="rpimg" src="Lokaleplanoeh\side01.jpg" alt="image" 
             style="width:400px;height:350px;border:0;"></img>
 
             <button class="button" onclick="togImgSize(10, 10, 20, 20)"></button>
+        </article>
+        <div class="add">
+            <p>add</p>
         </div>
 
-        <div id="buttonlinks" class="section">
+        <article id="buttonlinks" class="section">
             <h2>kan ikke finde det ønskede værksted på kortet?</h2>
             <h3>vælg det værksted du vil finde vej til</h3>
-            <button class="button" onclick="#">Rådhuset</button>
-            <button class="button" onclick="setVLink(renovationLink)">Renovation</button>
-            <button class="button" onclick="setVLink(bankLink)">banken</button>
-            <button class="button" onclick="setVLink(yogaLink)">yoga</button>
-            <button class="button" onclick="setVLink(kunstTrykLink)">kunst og tryk</button>
-            <button class="button" onclick="#">...</button>
+            <button class="button" onclick="setVLink(rådhusetLink)"     >Rådhuset</button>
+            <button class="button" onclick="setVLink(renovationLink)"   >Renovation</button>
+            <button class="button" onclick="setVLink(bankLink)"         >banken</button>
+            <button class="button" onclick="setVLink(yogaLink)"         >yoga</button>
+            <button class="button" onclick="setVLink(kunstTrykLink)"    >kunst og tryk</button>
+            <button class="button" onclick="setVLink(naturGalLink)"     >naturgalleriet</button>
+            <button class="button" onclick="setVLink(legeTVLink)"       >legetøjs værkstedet</button>
+            <button class="button" onclick="setVLink(julPVB)"           >jul på vesterbro</button>
+            <button class="button" onclick="setVLink(eventKlubLink)"    >eventyrenes klub</button>
+            <button class="button" onclick="#"         >...</button>
             
             <div>
                 <iframe id="video" width="560" height="315" src="renovationLink"
                 frameborder="0" allow="accelerometer; autoplay; encrypted-media; 
                 gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+            <p>husk eneligt at ændre videoens hastighed, vis det går for langsomt eller hurtigt</p>
+        </article>
+        <div class="add">
+            <p>add</p>
         </div>
         <footer>
             <h4>sidens skabere: </h4>
             <p>Anders A. Ahrensbach og Jonas C. Tulberg - Renovation</p>
         </footer>
         <script>
-            if (document.getElementsByClassName("button").onclick = "#")
-            {
-                document.getElementsByClassName("button").onclick = "setVLink(NGGYU)";
-            }
         </script>
     </body>
 </html>
