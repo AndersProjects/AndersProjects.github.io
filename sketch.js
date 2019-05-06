@@ -1,13 +1,15 @@
 var result;
 var cm_radiusStep= 10;
 var dd_timeStep = 10;
+var to_area = false;
+var measureType = "radius";
 
 function setup()
 {
     createCanvas(800, 800);
     textAlign(CENTER);
     textSize(18);
-    //rectMode(CENTER);
+    to_area = false;
 }
 
 function draw()
@@ -16,7 +18,8 @@ function draw()
     background(200);
     fill(0);
 
-    text("radius = "+calcGrafRadi(cm_radiusStep)+" tid(dage) = " + calcGrafTime(dd_timeStep), 100, 80, 200, 80);
+    text(measureType + "(cm) = "+toArea(calcGrafRadi(cm_radiusStep))+"\n tid(dage) = " + calcGrafTime(dd_timeStep), 100, 80, 200, 80);
+    
     text(calcResult(calcGrafRadi(cm_radiusStep), calcGrafTime(dd_timeStep)), 400, 50);
     text("radius step = " + cm_radiusStep + " tids step = " + dd_timeStep, 500, 80, 200, 80);
 
@@ -29,7 +32,7 @@ function draw()
     {
         n = n + 40;
 
-        text(Math.round(n / cm_radiusStep), n, height - 15);
+        text(Math.round(toArea(n / cm_radiusStep)), n, height - 15);
         rect(n, height - 10, 3, 10);
 
         text(Math.round((height - n ) / dd_timeStep), 15, n - 10);
@@ -69,5 +72,26 @@ function keyTyped()
     if(key === 'a')
     {
         cm_radiusStep = cm_radiusStep -1;
+    }
+    if(key == 'q')
+    {
+        if(to_area == false){
+            measureType = "area";
+            to_area = true;
+        }
+        else{
+            measureType = "radius";
+            to_area = false;
+        }
+    }
+}
+
+function toArea(radi)
+{
+    if(to_area == true){
+        return radi* radi * PI;
+    }
+    else{
+        return radi;
     }
 }
